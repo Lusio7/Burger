@@ -1,0 +1,179 @@
+@font-face {
+    font-family: Stencilstd;
+    src: url(../fonts/stencilstd.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #fff;
+    background-color: black;
+    background-image: url('../img/burger1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left;
+}
+
+.header-text {
+    float: right;
+    margin-top: 3%;
+    margin-right: 10%;
+    text-align: center;
+    width: 40%;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    margin-bottom: 40px;
+}
+
+.header-text:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+h1 {
+    font-family: 'Stencilstd', serif;
+    font-size: 70px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    word-spacing: 30px;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+#dot {
+    color: #ff9a18;
+    vertical-align: super;
+}
+
+.header-text h3 {
+    font-size: 28px;
+    font-style: italic;
+}
+
+.dash {
+    color: #ff9b1800;
+    text-decoration: line-through #ff9a18 solid;
+}
+
+#burger-input {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: inset 3px 4px 5px rgba(136, 136, 136, 0.673);
+    font-size: 18px;
+}
+
+.btn {
+    font-family: 'Libre Baskerville', serif;
+    text-transform: uppercase;
+    font-size: 18px;
+    padding: 10px 60px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#submit {
+    background-color: #ff9a18;
+}
+
+.row {
+    overflow: hidden;
+    width: 100%;
+    padding: 1%;
+}
+
+.col {
+    width: 35%;
+    float: left;
+    height: 45vh;
+    position: relative;
+    text-align: center;
+}
+
+#col-1 {
+    width: 30%;
+}
+
+.panels {
+    background-color: rgba(255, 255, 255, 0.6);
+    margin: 0 20px;
+    height: 100%;
+    border-radius: 20px;
+    color: #000;
+    text-align: left;
+    padding: 0 10%;
+}
+
+.panels h4 {
+    text-transform: uppercase;
+    padding-top: 3%;
+    font-weight: 700;
+    border-bottom: 1px solid #020202;
+    margin: 0 10%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.panels ul li {
+    list-style: none;
+}
+
+.active {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+#active {
+    color: #ff9a18;
+}
+
+.unactive {
+    color: #555;
+}
+
+#clear-all {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+#clear-btn {
+    background-color: rgba(0, 0, 0, 0);
+    color: #ff9a18;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+#clear-btn:focus,
+#burger-input:focus {outline:0;}
+
+#clear-btn:hover,
+#submit:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+.devoure {
+    border: 1px solid #ff9a18;
+    margin-left: 5px;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.devoure:hover {
+    background-color: #ff9a18;
+}

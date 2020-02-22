@@ -1,47 +1,64 @@
-<img src = "/public/assets/img/tasty_burger.gif" width="150px" height="150px"></a>
-<h1 id= "slogan">Eat Da Burger!</h1> 
-<h2>Noms on buns for you!</h2>
+<div class="header-text">
+    <h3 id="eat"><span class="dash">------</span> eat <span class="dash">------</span></h3>
+    <h1 id="header">Da<span id="dot">.</span>Burger</h1>
 
-<h2>Add a Burger</h2>
+    <form class="create-form">
+        <input type="text" id="burger-input" name="name">
 
-<form class="burgerForm">
+        <button class="btn" type="submit" id="submit">Submit</button>
+    </form>
 
-  <div class="form-group">
-    <label for="burger_name"></label>
-    <input type="text" id="burger_name" name="burger_name" placeholder="What'll ya have? What'll ya have?" style= "width: 500px">
-  </div>
+    <h5 id="instruction">Enter a burger you want to eat and click 'Submit'</h5>
+</div>
 
-  <div class="form-group">
-    <label for="devoured"><p>Have you Nomed this Burger?</p></label>
-    <input type="radio" name="devoured" id="radiobtn" value="1">Nomed!&nbsp;
-    <input type="radio" name="devoured" id="radiobtn" value="0"> checked Not Nomed!
-  </div>
+<div class="row">
 
-  <button type="submit" id="submit">Add Burger</button>
-</form>
+    <div class="col", id="col-1">
+        <div id="clear-all">
+            <button class="btn" id="clear-btn">Clear All</button>
+            
+        </div>
 
-<div class="burger-container">
-  <div id="container1">
-    <h2>un-nomed burgers!</h2>
 
-    <ul>
-      {{#each burgers}}
-        {{#unless devoured}}
-           {{> burgers/burger-block devoured = true}}
-        {{/unless}}
-      {{/each}}
-    </ul>
-  </div>
+    </div>
 
-  <div id="container2">
-    <h2>nomed burgers!</h2>
+    <div class="col">
+        <div class="panels active">
+            <h4 id="active">
+                <span id="active-name">Ready to Eat</span>
+            </h4>
+            <ul>
+                {{#each burgers}} 
+                    {{#unless devoured}} 
+                        <li>
+                            {{id}}.
+                            {{burger_name}}
+                            <button class="devoure" data-id="{{id}}" data-state="{{devoured}}">
+                                DEVOURE!
+                            </button>
+                            
+                        </li>
+                    {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
 
-    <ul>
-      {{#each burgers}}
-        {{#if devoured}}
-            {{> burgers/burger-block devoured = false}}
-        {{/if}}
-      {{/each}}
-    </ul>
-  </div>
+    </div>
+
+    <div class="col">
+        <div class="panels unactive">
+            <h4>Devoured</h4>
+            <ul>
+                {{#each burgers}} 
+                    {{#if devoured}} 
+                        <li>
+                            {{id}}.
+                            {{burger_name}}
+                        </li>
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
 </div>

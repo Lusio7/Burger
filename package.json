@@ -1,19 +1,18 @@
 {
   "name": "burger",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "password": "testtest",
+  "description": "A burger logger with MySQL, Node, Express, Handlebars and ORM",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Lusio7/Burger"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Lusio Filiba",
+  "license": "",
   "bugs": {
     "url": "https://github.com/Lusio7/Burger"
   },
@@ -23,8 +22,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "mysql": "^2.18.1",
-    "mysql2": "^2.1.0",
-    "nodemon": "^1.17.4",
-    "sequelizer": "^1.1.4"
+    "mysql2": "^1.7.0",
+    "sequelize": "^4.44.4"
   }
 }

@@ -1,0 +1,47 @@
+<img src = "/public/assets/img/tasty_burger.gif" width="150px" height="150px"></a>
+<h1 id= "slogan">Eat Da Burger!</h1> 
+<h2>Noms on buns for you!</h2>
+
+<h2>Add a Burger</h2>
+
+<form class="burgerForm">
+
+  <div class="form-group">
+    <label for="burger_name"></label>
+    <input type="text" id="burger_name" name="burger_name" placeholder="What'll ya have? What'll ya have?" style= "width: 500px">
+  </div>
+
+  <div class="form-group">
+    <label for="devoured"><p>Have you Nomed this Burger?</p></label>
+    <input type="radio" name="devoured" id="radiobtn" value="1">Nomed!&nbsp;
+    <input type="radio" name="devoured" id="radiobtn" value="0"> checked Not Nomed!
+  </div>
+
+  <button type="submit" id="submit">Add Burger</button>
+</form>
+
+<div class="burger-container">
+  <div id="container1">
+    <h2>un-nomed burgers!</h2>
+
+    <ul>
+      {{#each burgers}}
+        {{#unless devoured}}
+           {{> burgers/burger-block devoured = true}}
+        {{/unless}}
+      {{/each}}
+    </ul>
+  </div>
+
+  <div id="container2">
+    <h2>nomed burgers!</h2>
+
+    <ul>
+      {{#each burgers}}
+        {{#if devoured}}
+            {{> burgers/burger-block devoured = false}}
+        {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+</div>

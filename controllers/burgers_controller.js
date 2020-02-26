@@ -1,53 +1,35 @@
-// Dependencies
+var express = require('express');
+var router = express.Router();
+var burgers = require('../models/burger.js');
 
-
-var db = require('../models');
-
-
-// Routs
-module.exports = function (app) {
-app.get('/', function (req, res) {
-    db.Burgers.findAll({})
-        .then(function (burgerdata) {
-            var object = {
-                burgers: burgerdata,
-            }
-            return res.render('index', object);
-        });
+router.get('/', function(req, res){
+	res.redirect('/burgers')
 });
 
-app.post('/api/burgers', function (req, res) {
-    db.Burgers.create({
-            burger_name: req.body.name
-        })
-        .then(function (burger) {
-            res.json(true);
-        })
+router.get('/burgers', function(req, res){
+	burgers.all(function(data){
+		var hbsObject = {burgers: data};
+
+		console.log(hbsObject);
+
+		res.render('index', hbsObject);
+	});
 });
 
-app.put('/api/burgers/:id', function (req, res) {
-    var id = req.params.id;
-
-    db.Burgers.findOne({
-            where: {
-                id: req.params.id
-            }
-        })
-        .then(function (burger) {
-            burger.updateAttributes({
-                devoured: true,
-            }).then(function(){
-                res.json(true)
-            });
-        });
+router.post('/burgers/create', function(req, res){
+	burgers.create(['burger_name'], [req.body.b_name], function(data){
+		res.redirect('/burgers')
+	});
 });
 
+router.put('/burgers/update/:id', function(req, res){
+	var condition = 'id = ' + req.params.id;
 
-app.delete('/api/burgers', function (req, res) {
-    db.Burgers.destroy({
-        where: {},
-    }).then(function(){
-        res.json(true)
-    });
+	console.log('condition ', condition);
+
+	burgers.update({'devoured': req.body.devoured}, condition, function(data){
+		res.redirect('/burgers');
+	});
 });
-}
+
+module.exports = router;

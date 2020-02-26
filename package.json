@@ -1,28 +1,26 @@
 {
   "name": "burger",
   "version": "1.0.0",
-  "description": "A burger logger with MySQL, Node, Express, Handlebars and ORM",
-  "main": "server.js",
+  "description": "this app lets you make and devour burgers digitally",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lusio7/Burger"
+    "url": "git+https://github.com/travishughes13/burger.git"
   },
-  "author": "Lusio Filiba",
-  "license": "",
+  "author": "Various Hughes",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Lusio7/Burger"
+    "url": "https://github.com/travishughes13/burger/issues"
   },
-  "homepage": "https://github.com/Lusio7/Burger",
+  "homepage": "https://github.com/travishughes13/burger#readme",
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.17.2",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
-    "mysql": "^2.18.1",
-    "mysql2": "^1.7.0",
-    "sequelize": "^4.44.4"
+    "method-override": "^2.3.9",
+    "mysql": "^2.18.1"
   }
 }

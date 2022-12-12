@@ -18,7 +18,7 @@
   "homepage": "https://github.com/travishughes13/burger#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-handlebars": "^3.1.0",
     "method-override": "^2.3.9",
     "mysql": "^2.18.1"
